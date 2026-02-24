@@ -1,139 +1,89 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ازياء الكف الأخضر | Greenhandfs</title>
-
-<!-- أيقونات Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<style>
-body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#000;
-    color:#fff;
-    text-align:center;
-}
-.container{
-    max-width:420px;
-    margin:auto;
-    padding:20px;
-}
-h1{
-    margin-bottom:10px;
-}
-.desc{
-    color:#ccc;
-    margin-bottom:25px;
-    font-size:14px;
-}
-.btn{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    background:#9ACA3C;
-    color:#000;
-    text-decoration:none;
-    padding:14px;
-    border-radius:12px;
-    margin-bottom:12px;
-    font-weight:bold;
-}
-.btn i{
-    font-size:18px;
-}
-.btn:hover{
-    opacity:0.9;
-}
-.branches-btn{
-    cursor:pointer;
-}
-.branches{
-    display:none;
-    margin-top:15px;
-    background:#111;
-    padding:15px;
-    border-radius:12px;
-    text-align:right;
-    font-size:14px;
-}
-.branches p{
-    margin-bottom:10px;
-    line-height:1.6;
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Green Hand</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f172a;
+      color: #fff;
+      text-align: center;
+    }
+    header {
+      background: linear-gradient(135deg, #16a34a, #22c55e);
+      padding: 40px 20px;
+      border-bottom-left-radius: 30px;
+      border-bottom-right-radius: 30px;
+    }
+    h1 {
+      margin: 0;
+      font-size: 32px;
+    }
+    p {
+      opacity: 0.9;
+    }
+    .container {
+      padding: 30px 20px;
+    }
+    .card {
+      background: #1e293b;
+      padding: 20px;
+      margin: 15px auto;
+      border-radius: 20px;
+      max-width: 400px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #22c55e;
+      color: #000;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    footer {
+      margin-top: 30px;
+      padding: 20px;
+      font-size: 14px;
+      opacity: 0.6;
+    }
+  </style>
 </head>
-
 <body>
+
+<header>
+  <h1>🌿 Green Hand</h1>
+  <p>خدماتك الزراعية والبيئية بكل احتراف</p>
+</header>
 
 <div class="container">
 
-<h1>ازياء الكف الأخضر</h1>
-<div class="desc">Greenhand Fashion</div>
+  <div class="card">
+    <h2>🌱 خدماتنا</h2>
+    <p>تنسيق حدائق - زراعة - صيانة - حلول بيئية متكاملة</p>
+  </div>
 
-<a class="btn" href="https://www.facebook.com/greenhandfS" target="_blank">
-<i class="fab fa-facebook-f"></i> فيسبوك
-</a>
+  <div class="card">
+    <h2>📞 تواصل معنا</h2>
+    <p>اضغط للتواصل مباشرة عبر واتساب</p>
+    <a class="button" href="https://wa.me/966000000000">تواصل الآن</a>
+  </div>
 
-<a class="btn" href="https://www.instagram.com/greenhandfs" target="_blank">
-<i class="fab fa-instagram"></i> إنستجرام
-</a>
-
-<a class="btn" href="https://www.snapchat.com/@greenhandfs" target="_blank">
-<i class="fab fa-snapchat"></i> سناب شات
-</a>
-
-<a class="btn" href="https://api.whatsapp.com/send/?phone=967783386666" target="_blank">
-<i class="fab fa-whatsapp"></i> واتساب
-</a>
-
-<a class="btn" href="https://www.tiktok.com/@greenhandfs" target="_blank">
-<i class="fab fa-tiktok"></i> تيك توك
-</a>
-
-<a class="btn" href="https://t.me/greenhand_fs" target="_blank">
-<i class="fab fa-telegram"></i> تيليجرام
-</a>
-
-<a class="btn" href="https://x.com/greenhandfs" target="_blank">
-<i class="fab fa-x-twitter"></i> X
-</a>
-
-<a class="btn" href="https://www.youtube.com/@greenhandfs" target="_blank">
-<i class="fab fa-youtube"></i> يوتيوب
-</a>
-
-<a class="btn" href="https://gh-nice.com/" target="_blank">
-<i class="fas fa-globe"></i> الموقع الرسمي
-</a>
-
-<!-- زر الفروع -->
-<div class="btn branches-btn" onclick="toggleBranches()">
-<i class="fas fa-location-dot"></i> فروعنا
-</div>
-
-<!-- قسم الفروع -->
-<div class="branches" id="branches">
-<p>📍 صنعاء – شارع حدة أمام مركز الكميم<br>📞 779697903</p>
-<p>📍 صنعاء – الأصبحي شارع الحربي<br>📞 779697904</p>
-<p>📍 صنعاء – شارع جمال<br>📞 779697902</p>
-<p>📍 صنعاء – يمن مول<br>📞 779697906</p>
-<p>📍 صنعاء – سام مول<br>📞 779697905</p>
-<p>📍 عدن – كريتر سوق البز (الدرج)<br>📞 779697912</p>
-<p>📍 تعز – عقبة شارع جمال<br>📞 779697914</p>
-<p>📍 سيئون – شارع الجزائر ماس مول (الدور الثالث)<br>📞 779697908</p>
-</div>
+  <div class="card">
+    <h2>📍 موقعنا</h2>
+    <p>نخدمكم في جميع المناطق</p>
+  </div>
 
 </div>
 
-<script>
-function toggleBranches(){
-    const b = document.getElementById("branches");
-    b.style.display = b.style.display === "block" ? "none" : "block";
-}
-</script>
+<footer>
+  © 2026 Green Hand - جميع الحقوق محفوظة
+</footer>
 
 </body>
 </html>
