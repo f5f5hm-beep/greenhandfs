@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <meta http-equiv="refresh" content="0; url=https://greenhandfs.netlify.app">
+    <meta http-equiv="refresh" content="15; url=https://greenhandfs.netlify.app">
     
     <title>أزياء الكف الأخضر | Greenhand Fashion</title>
     
@@ -12,8 +12,8 @@
     
     <style>
         :root {
-            --brand-green: #9aca3c; /* اللون المطلوب */
-            --dark-bg: #000000;    /* خلفية سوداء */
+            --brand-green: #9aca3c;
+            --dark-bg: #000000;
         }
 
         body {
@@ -68,11 +68,11 @@
             border: none;
             cursor: pointer;
             font-size: 1.1rem;
+            width: 100%;
         }
 
         .btn:hover {
             transform: scale(1.02);
-            filter: brightness(1.1);
         }
 
         .btn-outline {
@@ -81,41 +81,51 @@
             border: 2px solid var(--brand-green);
         }
 
-        /* تنسيق قائمة الفروع */
-        .modal {
+        /* نافذة الفروع المصلحة */
+        .modal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.95);
-            z-index: 999;
+            z-index: 9999;
             overflow-y: auto;
         }
 
         .modal-content {
             background: #111;
-            margin: 10% auto;
+            margin: 5% auto;
             padding: 25px;
             width: 85%;
             max-width: 500px;
             border-radius: 20px;
             border: 1px solid var(--brand-green);
             text-align: right;
+            position: relative;
         }
 
         .branch-info {
             border-bottom: 1px solid #333;
-            padding: 12px 0;
+            padding: 15px 0;
         }
 
         .branch-info:last-child { border: none; }
 
-        .city { color: var(--brand-green); font-weight: bold; }
+        .city { color: var(--brand-green); font-weight: bold; font-size: 1.1rem; }
 
         .close-btn {
             color: white;
-            font-size: 30px;
+            font-size: 35px;
             cursor: pointer;
-            float: left;
+            position: absolute;
+            left: 20px;
+            top: 10px;
+        }
+
+        .phone-link {
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-top: 5px;
         }
     </style>
 </head>
@@ -135,38 +145,4 @@
             <a href="https://api.whatsapp.com/send/?phone=967783386666" class="btn"><i class="fab fa-whatsapp"></i> واتساب</a>
             <a href="https://www.tiktok.com/@greenhandfs" class="btn"><i class="fab fa-tiktok"></i> تيك توك</a>
             <a href="https://t.me/greenhand_fs" class="btn"><i class="fab fa-telegram"></i> تيليجرام</a>
-            <a href="https://x.com/greenhandfs" class="btn"><i class="fab fa-x-twitter"></i> تويتر (X)</a>
-            <a href="https://www.youtube.com/@greenhandfs" class="btn"><i class="fab fa-youtube"></i> يوتيوب</a>
-            <a href="https://gh-nice.com/" class="btn"><i class="fas fa-shopping-bag"></i> المتجر الإلكتروني</a>
-            
-            <button onclick="showBranches()" class="btn btn-outline">
-                <i class="fas fa-map-marker-alt"></i> فروعنا
-            </button>
-        </div>
-    </div>
-
-    <div id="branchModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="hideBranches()">&times;</span>
-            <h2 style="text-align: center; color: var(--brand-green);">فروعنا</h2>
-            
-            <div class="branch-info"><p><span class="city">صنعاء</span> – شارع حدة أمام مركز الكميم</p><p>هاتف: 779697903</p></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – الأصبحي شارع الحربي</p><p>هاتف: 779697904</p></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – شارع جمال</p><p>هاتف: 779697902</p></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – يمن مول</p><p>هاتف: 779697906</p></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – سام مول</p><p>هاتف: 779697905</p></div>
-            <div class="branch-info"><p><span class="city">عدن</span> – كريتر سوق البز (الدرج)</p><p>هاتف: 779697912</p></div>
-            <div class="branch-info"><p><span class="city">تعز</span> – عقبة شارع جمال</p><p>هاتف: 779697914</p></div>
-            <div class="branch-info"><p><span class="city">سيئون</span> – شارع الجزائر ماس مول</p><p>هاتف: 779697908</p></div>
-        </div>
-    </div>
-
-    <script>
-        function showBranches() { document.getElementById('branchModal').style.display = 'block'; }
-        function hideBranches() { document.getElementById('branchModal').style.display = 'none'; }
-        // إغلاق النافذة عند الضغط خارجها
-        window.onclick = function(e) { if(e.target == document.getElementById('branchModal')) hideBranches(); }
-    </script>
-
-</body>
-</html>
+            <a href="https://x.com/greenhandfs" class="btn"><i class="fab fa-x-twitter"></i> تويتر (
