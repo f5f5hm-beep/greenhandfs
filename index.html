@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="15; url=https://greenhandfs.netlify.app">
+    
+    <meta http-equiv="refresh" content="0; url=https://greenhandfs.netlify.app">
+    
     <title>أزياء الكف الأخضر | Greenhand Fashion</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <style>
         :root {
-            --brand-green: #9aca3c;
-            --dark-bg: #0b0b0b;
+            --brand-green: #9aca3c; /* اللون المطلوب */
+            --dark-bg: #000000;    /* خلفية سوداء */
         }
 
         body {
@@ -28,24 +30,24 @@
 
         .container {
             width: 100%;
-            max-width: 480px;
+            max-width: 450px;
             padding: 40px 20px;
             text-align: center;
         }
 
-        .logo-area h1 {
+        .header h1 {
             color: var(--brand-green);
+            font-size: 2rem;
             margin-bottom: 5px;
-            font-size: 1.8rem;
         }
 
-        .logo-area p {
-            color: #888;
-            font-size: 0.9rem;
+        .header p {
+            color: #ccc;
             margin-bottom: 30px;
+            font-size: 0.9rem;
         }
 
-        .links-wrapper {
+        .links-list {
             display: flex;
             flex-direction: column;
             gap: 15px;
@@ -53,89 +55,80 @@
 
         .btn {
             background-color: var(--brand-green);
-            color: #000;
+            color: black;
             text-decoration: none;
-            padding: 15px;
-            border-radius: 12px;
+            padding: 16px;
+            border-radius: 10px;
             font-weight: bold;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            gap: 12px;
+            transition: 0.3s;
             border: none;
             cursor: pointer;
-            font-size: 1rem;
-            width: 100%;
+            font-size: 1.1rem;
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(154, 202, 60, 0.4);
+            transform: scale(1.02);
+            filter: brightness(1.1);
         }
 
-        .btn i {
-            font-size: 1.2rem;
+        .btn-outline {
+            background-color: transparent;
+            color: var(--brand-green);
+            border: 2px solid var(--brand-green);
         }
 
-        /* تنسيق النافذة المنبثقة للفروع */
+        /* تنسيق قائمة الفروع */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.9);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 999;
             overflow-y: auto;
         }
 
         .modal-content {
-            background-color: #1a1a1a;
+            background: #111;
             margin: 10% auto;
-            padding: 20px;
-            border: 1px solid var(--brand-green);
-            width: 90%;
+            padding: 25px;
+            width: 85%;
             max-width: 500px;
-            border-radius: 15px;
+            border-radius: 20px;
+            border: 1px solid var(--brand-green);
             text-align: right;
         }
 
-        .branch-item {
+        .branch-info {
             border-bottom: 1px solid #333;
-            padding: 10px 0;
+            padding: 12px 0;
         }
 
-        .branch-item:last-child { border: none; }
-        
-        .branch-city { color: var(--brand-green); font-weight: bold; }
-        
+        .branch-info:last-child { border: none; }
+
+        .city { color: var(--brand-green); font-weight: bold; }
+
         .close-btn {
             color: white;
-            float: left;
-            font-size: 28px;
-            font-weight: bold;
+            font-size: 30px;
             cursor: pointer;
-        }
-
-        .footer-note {
-            margin-top: 40px;
-            font-size: 0.7rem;
-            color: #444;
+            float: left;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <div class="logo-area">
+        <div class="header">
             <h1>أزياء الكف الأخضر</h1>
             <p>Greenhand Fashion</p>
             <p>تصميم وتصنيع وبيع الأزياء النسائية والبناتي</p>
         </div>
 
-        <div class="links-wrapper">
+        <div class="links-list">
             <a href="https://www.facebook.com/greenhandfS" class="btn"><i class="fab fa-facebook"></i> فيسبوك</a>
             <a href="https://www.instagram.com/greenhandfs" class="btn"><i class="fab fa-instagram"></i> انستقرام</a>
             <a href="https://www.snapchat.com/@greenhandfs" class="btn"><i class="fab fa-snapchat"></i> سناب شات</a>
@@ -144,63 +137,35 @@
             <a href="https://t.me/greenhand_fs" class="btn"><i class="fab fa-telegram"></i> تيليجرام</a>
             <a href="https://x.com/greenhandfs" class="btn"><i class="fab fa-x-twitter"></i> تويتر (X)</a>
             <a href="https://www.youtube.com/@greenhandfs" class="btn"><i class="fab fa-youtube"></i> يوتيوب</a>
-            <a href="https://gh-nice.com/" class="btn"><i class="fas fa-globe"></i> الموقع الإلكتروني</a>
+            <a href="https://gh-nice.com/" class="btn"><i class="fas fa-shopping-bag"></i> المتجر الإلكتروني</a>
             
-            <button onclick="openModal()" class="btn" style="background-color: white; border: 2px solid var(--brand-green);">
-                <i class="fas fa-map-marker-alt" style="color: var(--brand-green);"></i> فروعنا
+            <button onclick="showBranches()" class="btn btn-outline">
+                <i class="fas fa-map-marker-alt"></i> فروعنا
             </button>
         </div>
-
-        <p class="footer-note">سيتم تحويلك تلقائياً خلال ثوانٍ...</p>
     </div>
 
     <div id="branchModal" class="modal">
         <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h2 style="color: var(--brand-green); text-align: center;">فروعنا</h2>
+            <span class="close-btn" onclick="hideBranches()">&times;</span>
+            <h2 style="text-align: center; color: var(--brand-green);">فروعنا</h2>
             
-            <div class="branch-item">
-                <p><span class="branch-city">صنعاء</span> – شارع حدة أمام مركز الكميم</p>
-                <p>الهاتف: 779697903</p>
-            </div>
-            <div class="branch-item">
-                <p><span class="branch-city">صنعاء</span> – الأصبحي شارع الحربي</p>
-                <p>الهاتف: 779697904</p>
-            </div>
-            <div class="branch-item">
-                <p><span class="branch-city">صنعاء</span> – شارع جمال</p>
-                <p>الهاتف: 779697902</p>
-            </div>
-            <div class="branch-item">
-                <p><span class="branch-city">صنعاء</span> – يمن مول</p>
-                <p>الهاتف: 779697906</p>
-            </div>
-            <div class="branch-item">
-                <p><span class="branch-city">صنعاء</span> – سام مول</p>
-                <p>الهاتف: 779697905</p>
-            </div>
-            <div class="branch-item">
-                <p><span class="branch-city">عدن</span> – كريتر سوق البز (الدرج)</p>
-                <p>الهاتف: 779697912</p>
-            </div>
-            <div class="branch-item">
-                <p><span class="branch-city">تعز</span> – عقبة شارع جمال</p>
-                <p>الهاتف: 779697914</p>
-            </div>
-            <div class="branch-item">
-                <p><span class="branch-city">سيئون</span> – شارع الجزائر ماس مول</p>
-                <p>الهاتف: 779697908</p>
-            </div>
+            <div class="branch-info"><p><span class="city">صنعاء</span> – شارع حدة أمام مركز الكميم</p><p>هاتف: 779697903</p></div>
+            <div class="branch-info"><p><span class="city">صنعاء</span> – الأصبحي شارع الحربي</p><p>هاتف: 779697904</p></div>
+            <div class="branch-info"><p><span class="city">صنعاء</span> – شارع جمال</p><p>هاتف: 779697902</p></div>
+            <div class="branch-info"><p><span class="city">صنعاء</span> – يمن مول</p><p>هاتف: 779697906</p></div>
+            <div class="branch-info"><p><span class="city">صنعاء</span> – سام مول</p><p>هاتف: 779697905</p></div>
+            <div class="branch-info"><p><span class="city">عدن</span> – كريتر سوق البز (الدرج)</p><p>هاتف: 779697912</p></div>
+            <div class="branch-info"><p><span class="city">تعز</span> – عقبة شارع جمال</p><p>هاتف: 779697914</p></div>
+            <div class="branch-info"><p><span class="city">سيئون</span> – شارع الجزائر ماس مول</p><p>هاتف: 779697908</p></div>
         </div>
     </div>
 
     <script>
-        function openModal() { document.getElementById("branchModal").style.display = "block"; }
-        function closeModal() { document.getElementById("branchModal").style.display = "none"; }
-        window.onclick = function(event) {
-            let modal = document.getElementById("branchModal");
-            if (event.target == modal) { modal.style.display = "none"; }
-        }
+        function showBranches() { document.getElementById('branchModal').style.display = 'block'; }
+        function hideBranches() { document.getElementById('branchModal').style.display = 'none'; }
+        // إغلاق النافذة عند الضغط خارجها
+        window.onclick = function(e) { if(e.target == document.getElementById('branchModal')) hideBranches(); }
     </script>
 
 </body>
