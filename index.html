@@ -2,10 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <meta http-equiv="refresh" content="15; url=https://greenhandfs.netlify.app">
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>أزياء الكف الأخضر | Greenhand Fashion</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,116 +13,153 @@
             --dark-bg: #000000;
         }
 
+        * {
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
         body {
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
             background-color: var(--dark-bg);
             color: white;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
             min-height: 100vh;
         }
 
         .container {
             width: 100%;
-            max-width: 450px;
-            padding: 40px 20px;
+            max-width: 480px; /* حجم مثالي لشاشات الجوال */
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
             text-align: center;
+            margin-bottom: 30px;
         }
 
         .header h1 {
             color: var(--brand-green);
-            font-size: 2rem;
-            margin-bottom: 5px;
+            font-size: 28px;
+            margin: 0 0 5px 0;
+            font-weight: bold;
         }
 
-        .header p {
-            color: #ccc;
-            margin-bottom: 30px;
-            font-size: 0.9rem;
+        .header .en-name {
+            color: #ffffff;
+            font-size: 18px;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .header .description {
+            color: #bbbbbb;
+            font-size: 14px;
+            line-height: 1.6;
+            padding: 0 10px;
         }
 
         .links-list {
+            width: 100%;
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 12px;
         }
 
         .btn {
             background-color: var(--brand-green);
-            color: black;
+            color: #000000;
             text-decoration: none;
-            padding: 16px;
-            border-radius: 10px;
-            font-weight: bold;
+            padding: 16px 20px;
+            border-radius: 15px; /* زوايا دائرية فخمة */
+            font-weight: 600;
+            font-size: 17px;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            transition: 0.3s;
+            transition: transform 0.2s;
             border: none;
             cursor: pointer;
-            font-size: 1.1rem;
             width: 100%;
         }
 
-        .btn:hover {
-            transform: scale(1.02);
+        .btn:active {
+            transform: scale(0.97); /* تأثير ضغط الزر للجوال */
+        }
+
+        .btn i {
+            font-size: 20px;
+            width: 25px;
+            text-align: center;
         }
 
         .btn-outline {
             background-color: transparent;
             color: var(--brand-green);
             border: 2px solid var(--brand-green);
+            margin-top: 10px;
         }
 
-        /* نافذة الفروع المصلحة */
+        /* نافذة الفروع المخصصة للجوال */
         .modal-overlay {
             display: none;
             position: fixed;
             top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.95);
+            background: rgba(0,0,0,0.98);
             z-index: 9999;
-            overflow-y: auto;
+            padding: 20px;
         }
 
         .modal-content {
             background: #111;
-            margin: 5% auto;
-            padding: 25px;
-            width: 85%;
-            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            width: 100%;
+            max-width: 400px;
             border-radius: 20px;
             border: 1px solid var(--brand-green);
-            text-align: right;
             position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .branch-info {
-            border-bottom: 1px solid #333;
+            border-bottom: 1px solid #222;
             padding: 15px 0;
+            text-align: right;
         }
 
         .branch-info:last-child { border: none; }
 
-        .city { color: var(--brand-green); font-weight: bold; font-size: 1.1rem; }
+        .city { color: var(--brand-green); font-weight: bold; font-size: 17px; display: block; margin-bottom: 5px; }
 
         .close-btn {
             color: white;
-            font-size: 35px;
+            font-size: 30px;
             cursor: pointer;
-            position: absolute;
-            left: 20px;
-            top: 10px;
+            position: sticky;
+            top: 0;
+            float: left;
+            z-index: 10;
         }
 
         .phone-link {
             color: #fff;
             text-decoration: none;
-            display: block;
-            margin-top: 5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 8px;
+            font-size: 15px;
+            background: #222;
+            padding: 5px 12px;
+            border-radius: 8px;
         }
     </style>
 </head>
@@ -134,8 +168,8 @@
     <div class="container">
         <div class="header">
             <h1>أزياء الكف الأخضر</h1>
-            <p>Greenhand Fashion</p>
-            <p>تصميم وتصنيع وبيع الأزياء النسائية والبناتي</p>
+            <div class="en-name">Greenhand Fashion</div>
+            <p class="description">علامة تجارية محلية متخصصة في تصميم وتصنيع وبيع الأزياء النسائية والبناتي</p>
         </div>
 
         <div class="links-list">
@@ -158,30 +192,32 @@
     <div id="branchModal" class="modal-overlay">
         <div class="modal-content">
             <span class="close-btn" id="closeModal">&times;</span>
-            <h2 style="text-align: center; color: var(--brand-green); margin-bottom: 20px;">فروعنا</h2>
+            <h2 style="text-align: center; color: var(--brand-green); font-size: 22px;">فروعنا</h2>
             
-            <div class="branch-info"><p><span class="city">صنعاء</span> – شارع حدة أمام مركز الكميم</p><a href="tel:779697903" class="phone-link">هاتف: 779697903</a></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – الأصبحي شارع الحربي</p><a href="tel:779697904" class="phone-link">هاتف: 779697904</a></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – شارع جمال</p><a href="tel:779697902" class="phone-link">هاتف: 779697902</a></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – يمن مول</p><a href="tel:779697906" class="phone-link">هاتف: 779697906</a></div>
-            <div class="branch-info"><p><span class="city">صنعاء</span> – سام مول</p><a href="tel:779697905" class="phone-link">هاتف: 779697905</a></div>
-            <div class="branch-info"><p><span class="city">عدن</span> – كريتر سوق البز (الدرج)</p><a href="tel:779697912" class="phone-link">هاتف: 779697912</a></div>
-            <div class="branch-info"><p><span class="city">تعز</span> – عقبة شارع جمال</p><a href="tel:779697914" class="phone-link">هاتف: 779697914</a></div>
-            <div class="branch-info"><p><span class="city">سيئون</span> – شارع الجزائر ماس مول</p><a href="tel:779697908" class="phone-link">هاتف: 779697908</a></div>
+            <div class="branch-info"><span class="city">صنعاء – شارع حدة</span><p>أمام مركز الكميم</p><a href="tel:779697903" class="phone-link"><i class="fas fa-phone"></i> 779697903</a></div>
+            <div class="branch-info"><span class="city">صنعاء – الأصبحي</span><p>شارع الحربي</p><a href="tel:779697904" class="phone-link"><i class="fas fa-phone"></i> 779697904</a></div>
+            <div class="branch-info"><span class="city">صنعاء – شارع جمال</span><a href="tel:779697902" class="phone-link"><i class="fas fa-phone"></i> 779697902</a></div>
+            <div class="branch-info"><span class="city">صنعاء – يمن مول</span><a href="tel:779697906" class="phone-link"><i class="fas fa-phone"></i> 779697906</a></div>
+            <div class="branch-info"><span class="city">صنعاء – سام مول</span><a href="tel:779697905" class="phone-link"><i class="fas fa-phone"></i> 779697905</a></div>
+            <div class="branch-info"><span class="city">عدن – كريتر</span><p>سوق البز (الدرج)</p><a href="tel:779697912" class="phone-link"><i class="fas fa-phone"></i> 779697912</a></div>
+            <div class="branch-info"><span class="city">تعز – عقبة شارع جمال</span><a href="tel:779697914" class="phone-link"><i class="fas fa-phone"></i> 779697914</a></div>
+            <div class="branch-info"><span class="city">سيئون – شارع الجزائر</span><p>ماس مول - الدور الثالث</p><a href="tel:779697908" class="phone-link"><i class="fas fa-phone"></i> 779697908</a></div>
         </div>
     </div>
 
     <script>
-        // برمجة فتح وإغلاق النافذة
         const btn = document.getElementById('btnBranches');
         const modal = document.getElementById('branchModal');
         const close = document.getElementById('closeModal');
 
-        btn.onclick = function() { modal.style.display = "block"; }
-        close.onclick = function() { modal.style.display = "none"; }
+        btn.onclick = function() { modal.style.display = "block"; document.body.style.overflow = "hidden"; }
+        close.onclick = function() { modal.style.display = "none"; document.body.style.overflow = "auto"; }
         
         window.onclick = function(event) {
-            if (event.target == modal) { modal.style.display = "none"; }
+            if (event.target == modal) { 
+                modal.style.display = "none"; 
+                document.body.style.overflow = "auto";
+            }
         }
     </script>
 
